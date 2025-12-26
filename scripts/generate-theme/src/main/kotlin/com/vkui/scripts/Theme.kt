@@ -1,11 +1,12 @@
 package com.vkui.scripts
 
+import com.vkui.scripts.theme.CamelCaseName
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 data class Theme(
     val key: ThemeKey,
-    val name: String,
+    val name: CamelCaseName,
     val struct: ThemeStruct,
 )
 
@@ -17,19 +18,19 @@ enum class ThemeKey {
 @Serializable
 data class ThemeStruct(
     @SerialName("font")
-    val textStyles: Map<String, TextStyleFlavors>,
+    val textStyles: Map<CamelCaseName, TextStyleFlavors>,
 
     @SerialName("size")
-    val sizes: Map<String, SizeFlavors>,
+    val sizes: Map<CamelCaseName, SizeFlavors>,
 
     @SerialName("color")
-    val colors: Map<String, ColorFlavors>,
+    val colors: Map<CamelCaseName, ColorFlavors>,
 
     @SerialName("other")
     val extras: ThemeExtras,
 
     @SerialName("opacity")
-    val opacity: Map<String, Float>,
+    val opacity: Map<CamelCaseName, Float>,
 )
 
 @Serializable

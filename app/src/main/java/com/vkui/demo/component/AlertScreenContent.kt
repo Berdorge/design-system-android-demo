@@ -6,8 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.vkui.components.VkAlert
-import com.vkui.components.VkButton
+import com.vkui.compose.components.VkAlert
+import com.vkui.compose.components.VkButton
 
 object AlertScreenContent {
     private val isDialogShown = mutableStateOf(false)

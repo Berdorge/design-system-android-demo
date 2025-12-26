@@ -1,5 +1,6 @@
 package com.vkui.scripts
 
+import com.vkui.scripts.theme.CamelCaseName
 import java.io.BufferedWriter
 import java.io.File
 import java.nio.file.Path
@@ -46,12 +47,12 @@ fun generateTokensKotlinFile(
         }
 }
 
-private fun BufferedWriter.writeLine(content: String = "") {
+fun BufferedWriter.writeLine(content: String = "") {
     write(content)
     write(System.lineSeparator())
 }
 
 data class GeneratedProperty(
-    val name: String,
+    val name: CamelCaseName,
     val type: String,
 )

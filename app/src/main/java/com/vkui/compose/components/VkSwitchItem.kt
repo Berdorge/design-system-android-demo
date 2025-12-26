@@ -1,4 +1,4 @@
-package com.vkui.components
+package com.vkui.compose.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

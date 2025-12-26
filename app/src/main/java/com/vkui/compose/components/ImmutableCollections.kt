@@ -1,4 +1,4 @@
-package com.vkui.components
+package com.vkui.compose.components
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable

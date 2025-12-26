@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.vkui.components.VkText
+import com.vkui.compose.components.VkText
 import com.vkui.theme.VkTheme
 
 object TextScreenContent {

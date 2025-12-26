@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.compose.content
-import com.vkui.components.VkText
+import com.vkui.compose.components.VkText
 import com.vkui.demo.R
 import com.vkui.demo.component.ComponentScreenFragment
 import com.vkui.demo.component.ComponentScreenKey

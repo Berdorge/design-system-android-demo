@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.vkui.components.VkButton
+import com.vkui.compose.components.VkButton
 
 object ButtonScreenContent {
     @Composable

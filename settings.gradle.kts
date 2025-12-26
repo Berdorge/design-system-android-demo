@@ -1,4 +1,8 @@
 pluginManagement {
+    includeBuild("scripts") {
+        name = "scripts"
+    }
+
     repositories {
         google {
             content {
@@ -22,5 +26,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "VKUI Design System"
 
-includeBuild("scripts")
 include(":app")

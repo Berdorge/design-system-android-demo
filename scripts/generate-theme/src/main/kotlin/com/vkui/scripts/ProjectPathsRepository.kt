@@ -8,6 +8,7 @@ fun createPathsRepository(): ProjectPathsRepository {
 
 interface ProjectPathsRepository {
     fun getThemeGenerationSourceSetPath(): Path
+    fun getThemeGenerationResourcesPath(): Path
 }
 
 private class GitProjectPathsRepository : ProjectPathsRepository {
@@ -24,5 +25,9 @@ private class GitProjectPathsRepository : ProjectPathsRepository {
 
     override fun getThemeGenerationSourceSetPath(): Path {
         return projectRootDirectory.resolve(Path.of("app", "src", "main", "java"))
+    }
+
+    override fun getThemeGenerationResourcesPath(): Path {
+        return projectRootDirectory.resolve(Path.of("app", "src", "main", "res-generated"))
     }
 }

@@ -1,5 +1,6 @@
 package com.vkui.scripts
 
+import com.vkui.scripts.theme.CamelCaseName
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
@@ -38,10 +39,10 @@ private class HttpThemesRepository(private val httpClient: HttpClient) : ThemesR
         )
     }
 
-    private fun getThemeName(themeKey: ThemeKey): String {
+    private fun getThemeName(themeKey: ThemeKey): CamelCaseName {
         return when (themeKey) {
-            ThemeKey.LIGHT -> "vkontakteAndroid"
-            ThemeKey.DARK -> "vkontakteAndroidDark"
+            ThemeKey.LIGHT -> CamelCaseName("vkontakteAndroid")
+            ThemeKey.DARK -> CamelCaseName("vkontakteAndroidDark")
         }
     }
 

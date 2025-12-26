@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="com.vkui.view.components.VkSwitchItem">
+
+    <com.vkui.view.components.VkSwitch
+        android:id="@+id/sub_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/text_space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vkui.view.components.VkText
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/vk_ui_font_text"
+        android:textColor="?attr/vk_ui_color_text_primary"
+        app:layout_constraintBottom_toTopOf="@+id/subtitle"
+        app:layout_constraintLeft_toLeftOf="@id/text_space"
+        app:layout_constraintRight_toRightOf="@id/text_space"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vkui.view.components.VkText
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/vk_ui_spacing_size2_xs"
+        android:textAppearance="?attr/vk_ui_font_footnote"
+        android:textColor="?attr/vk_ui_color_text_secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/text_space"
+        app:layout_constraintRight_toRightOf="@id/text_space"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_goneMarginTop="0dp" />
+</merge>

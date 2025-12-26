@@ -10,14 +10,17 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
-import com.vkui.components.SwitchAlignment
-import com.vkui.components.VkInput
-import com.vkui.components.VkSelectInput
-import com.vkui.components.VkSwitchItem
-import com.vkui.components.makeImmutable
+import com.vkui.compose.components.SwitchAlignment
+import com.vkui.compose.components.VkInput
+import com.vkui.compose.components.VkSelectInput
+import com.vkui.compose.components.VkSwitchItem
+import com.vkui.compose.components.makeImmutable
 import com.vkui.theme.VkTheme
+import com.vkui.view.components.ContentBadgeAppearance
+import com.vkui.view.components.VkContentBadge
 
 object SwitchScreenContent {
     private val switchAlignmentValues = SwitchAlignment.entries
@@ -45,8 +48,13 @@ object SwitchScreenContent {
         ) {
             Column(
                 modifier = Modifier.weight(1F),
+                horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
+                VkContentBadge(
+                    text = "Compose",
+                    appearance = ContentBadgeAppearance.Positive
+                )
                 for (i in 0..2) {
                     val title = title.value.text.takeIf { i == 0 || i == 2 }
                     val subtitle = subtitle.value.text.takeIf { i == 1 || i == 2 }
@@ -63,6 +71,7 @@ object SwitchScreenContent {
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
+                SwitchScreenViewContent(title, subtitle, isEnabled, switchAlignment)
             }
 
             ChooseTitleAndSubtitle()

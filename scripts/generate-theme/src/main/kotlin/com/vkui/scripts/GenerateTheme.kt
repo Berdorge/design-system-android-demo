@@ -1,5 +1,7 @@
 package com.vkui.scripts
 
+import com.vkui.scripts.theme.CamelCaseName
+
 private const val GENERATED_FILES_PACKAGE = "com.vkui.theme"
 
 suspend fun main() {
@@ -8,9 +10,9 @@ suspend fun main() {
     val themes = ThemeKey.entries.map { themeKey ->
         themesRepository.getTheme(themeKey)
     }
-    val generationPath = pathsRepository.getThemeGenerationSourceSetPath()
+    val sourceSetPath = pathsRepository.getThemeGenerationSourceSetPath()
 
-    fun getTokenKeys(getMap: ThemeStruct.() -> Map<String, *>) = themes.map { theme ->
+    fun getTokenKeys(getMap: ThemeStruct.() -> Map<CamelCaseName, *>) = themes.map { theme ->
         getMap(theme.struct).keys
     }
         .reduceOrNull { first, second -> first.intersect(second) }
@@ -30,7 +32,7 @@ suspend fun main() {
     val commonOpacity = getTokenKeys { opacity }
 
     generateTokensKotlinFile(
-        sourceSetPath = generationPath,
+        sourceSetPath = sourceSetPath,
         filePackage = GENERATED_FILES_PACKAGE,
         className = "ColorScheme",
         imports = setOf("androidx.compose.ui.graphics.Color"),
@@ -43,7 +45,7 @@ suspend fun main() {
         }
     )
     generateTokensKotlinFile(
-        sourceSetPath = generationPath,
+        sourceSetPath = sourceSetPath,
         filePackage = GENERATED_FILES_PACKAGE,
         className = "Typography",
         imports = setOf(
@@ -76,7 +78,7 @@ suspend fun main() {
         }
     )
     generateTokensKotlinFile(
-        sourceSetPath = generationPath,
+        sourceSetPath = sourceSetPath,
         filePackage = GENERATED_FILES_PACKAGE,
         className = "Dimens",
         imports = setOf(
@@ -93,7 +95,7 @@ suspend fun main() {
         }
     )
     generateTokensKotlinFile(
-        sourceSetPath = generationPath,
+        sourceSetPath = sourceSetPath,
         filePackage = GENERATED_FILES_PACKAGE,
         className = "Opacity",
         imports = emptySet(),
@@ -105,4 +107,5 @@ suspend fun main() {
             "${value}F"
         }
     )
+    generateViewThemes(pathsRepository, themes)
 }

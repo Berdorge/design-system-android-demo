@@ -13,7 +13,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.text.input.TextFieldValue
-import com.vkui.components.VkInput
+import com.vkui.compose.components.VkInput
 import com.vkui.theme.VkTheme
 
 object InputScreenContent {
