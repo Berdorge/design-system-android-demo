@@ -33,6 +33,7 @@ dependencyResolutionManagement {
 rootProject.name = "VKUI Design System"
 
 include(":analysis-runtime")
+include(":analysis-test")
 include(":demo-app")
 include(":demo-components-compose")
 include(":demo-components-view")

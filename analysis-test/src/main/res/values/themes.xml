@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TestTheme" parent="Theme.AppCompat">
+        <item name="test_attr">8dp</item>
+    </style>
+</resources>
