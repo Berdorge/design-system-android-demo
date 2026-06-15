@@ -6,23 +6,26 @@ import android.util.SparseIntArray
 import android.view.LayoutInflater
 import android.view.View
 import androidx.core.util.isNotEmpty
+import com.vkui.analysis.runtime.DesignAnalysisLayoutInflaterFactory
 import com.vkui.view.components.R
 import com.vkui.view.theme.VkThemeHelper.ThemedAttribute
 
 class VkLayoutInflaterFactory(
-    private val layoutInflater: LayoutInflater
+    layoutInflater: LayoutInflater
 ) : LayoutInflater.Factory2 {
+    private val delegate = DesignAnalysisLayoutInflaterFactory(layoutInflater)
+
     override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
         return onCreateView(null, name, context, attrs)
     }
 
-    override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? {
-        val isCustomView = name.contains('.')
-        val view = if (isCustomView) {
-            layoutInflater.createView(context, name, null, attrs)
-        } else {
-            layoutInflater.onCreateView(context, parent, name, attrs)
-        }
+    override fun onCreateView(
+        parent: View?,
+        name: String,
+        context: Context,
+        attrs: AttributeSet
+    ): View? {
+        val view = delegate.onCreateView(parent, name, context, attrs)
         if (view != null) {
             val themeTag = createThemeTag(attrs)
             if (themeTag.isNotEmpty()) {

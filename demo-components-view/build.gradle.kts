@@ -31,6 +31,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":analysis-runtime"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.appcompat)
