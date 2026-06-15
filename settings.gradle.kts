@@ -2,6 +2,9 @@ pluginManagement {
     includeBuild("demo-theme-generator") {
         name = "demo-theme-generator"
     }
+    includeBuild("analysis-plugin") {
+        name = "analysis-plugin"
+    }
 
     repositories {
         google {
